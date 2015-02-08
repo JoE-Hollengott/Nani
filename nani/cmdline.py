@@ -1,4 +1,5 @@
 import argparse
+from fetcher import Fetcher
 
 def run():
 	parser = argparse.ArgumentParser(prog='nani',
@@ -9,4 +10,5 @@ def run():
 					help='The number of results to return')
 	args = parser.parse_args()
 	
-	
+	fetch = Fetcher()
+	fetch.fetch_search(search, results)
