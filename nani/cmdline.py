@@ -11,4 +11,6 @@ def run():
 	args = parser.parse_args()
 	
 	fetch = Fetcher()
-	fetch.fetch_search(search, results)
+	fetch.fetch_search(args.search, args.results)
+
+run()
