@@ -1,4 +1,4 @@
 
-from .en_wikipedia_interface import En_Wikipedia
-from .stackoverflow_interface import Stackoverflow
+from nani.interfaces.en_wikipedia_interface import En_Wikipedia
+from nani.interfaces.stackoverflow_interface import Stackoverflow
 

@@ -2,14 +2,15 @@ import mechanicalsoup
 from urllib.parse import urlparse
 import webbrowser
 import textwrap
-import interfaces
+import nani.interfaces
 
 class Fetcher():
 	
-	def __init__(self):
+	def __init__(self, show_unsupported):
 		self.fetched = [] #turple of (Title, Url)
 		self.results = [] #turple of (Question, Answers[*], Ratings[*])
 		self.max_results = 0
+		self.unsupported = show_unsupported
 
 	def fetch_search(self, search, results):
 		browser = mechanicalsoup.Browser()
@@ -38,12 +39,15 @@ class Fetcher():
 				lookup = lookup.replace('.', '_')
 
 				try:
-					interface = eval('interfaces.'+lookup+'()')
+					interface = eval('nani.interfaces.'+lookup+'()')
 					self.results.append(interface.analyze_page(browser.get(item[1])))
 					new_fetched.append(item)
 		
 				except AttributeError:
-					print('No Interface OR Incomplete Interface for '+lookup)
+					if self.unsupported:
+						print('No Interface OR Incomplete Interface for '+lookup)
+					else:
+						pass
 					
 			self.fetched = new_fetched
 			self.max_results = len(self.results)

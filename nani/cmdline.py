@@ -1,5 +1,5 @@
 import argparse
-from fetcher import Fetcher
+from nani.fetcher import Fetcher
 import textwrap
 
 def run():
@@ -9,10 +9,12 @@ def run():
 					help='The question your want to search')
 	parser.add_argument('-r', '--results', type=int, default=3,
 					help='The number of results to return')
+	parser.add_argument('-u', '--unsupported', type=bool, default=False,
+					help='Display the unsupported results')
 	args = parser.parse_args()
 	
 	exit = False
-	fetch = Fetcher()
+	fetch = Fetcher(args.unsupported)
 	fetch.fetch_search(args.search, args.results)
 	focus = None
 
@@ -64,4 +66,3 @@ Help:\n
 					print('Unrecognised command, Use help')
 					focus = None
 
-run()

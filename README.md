@@ -1,3 +1,3 @@
 # Nani
 
-Version 0.1.001 in Development
+Version 0.1.1 in Development
