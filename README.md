@@ -13,13 +13,12 @@ favoring higher rated answers to your question.
 Requirements
 ============
 
-* Python 3.0 or higher
-* Works on Linux, Mac OSX, BSD
+* Python 3.2 or higher
+* Works on Linux, Mac OSX
 
 Install
 =======
-Download the zip or clone the repo
-Then run the setup.py
+Download the zip or clone the repo. Then run the setup.py
 
     sudo python3 setup.py install
 
