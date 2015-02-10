@@ -20,13 +20,21 @@ Requirements
 ============
 
 * Python 3.2 or higher
-* Works on Linux, Mac OSX
+* Works on Windows, Linux, Mac OSX
 
 Install
 =======
 Download the zip or clone the repo. Then run the setup.py
 
+Linux & Mac OSX:
+
     sudo python3 setup.py install
+
+Windows:
+
+    python3 setup.py install
+
+    Make sure your 'Python3X/Scripts/' folder is added to your %PATH%
 
 Using
 =====
