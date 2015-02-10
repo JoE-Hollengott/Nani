@@ -1,5 +1,6 @@
 import mechanicalsoup
 from urllib.parse import urlparse
+from urllib.parse import quote_plus
 import webbrowser
 import textwrap
 import nani.interfaces
@@ -16,6 +17,7 @@ class Fetcher():
 		browser = mechanicalsoup.Browser()
 		
 		search = ' '.join(search)
+		search = quote_plus(search)
 		search_page = browser.get("https://google.com/search?q="+search)
 		
 		search_list = search_page.soup.find_all('h3', class_='r') #make find all when ready
@@ -40,7 +42,7 @@ class Fetcher():
 
 				try:
 					interface = eval('nani.interfaces.'+lookup+'()')
-					self.results.append(interface.analyze_page(browser.get(item[1])))
+					self.results.append(interface.analyze_page(browser.get(item[1]),search))
 					new_fetched.append(item)
 		
 				except AttributeError:

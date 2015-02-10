@@ -37,6 +37,10 @@ Help:\n
 \tback - Go back to the Search List\n
 \t\tAliases: b, back\n'''
 
+	if fetch.max_results < 1:
+		exit = True
+		print('No Results Found For: '+' '.join(args.search))
+
 	while not exit:
 		print(fetch.format_output(focus))
 		in_string = input(">")
