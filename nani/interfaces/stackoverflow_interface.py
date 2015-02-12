@@ -5,7 +5,7 @@ class Stackoverflow:
 		self.post_texts = []
 		self.post_ratings = []
 		
-		#use this method to grab all the information from the page and return a turple (Question, Answers[], Ratings[])
+	#use this method to grab all the information from the page and return a tuple (Question, Answers[], Ratings[])
 	def analyze_page(self, page, search):
 		try:
 			post_tags = page.soup.find_all('div', class_="post-text")

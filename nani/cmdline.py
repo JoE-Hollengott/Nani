@@ -2,6 +2,7 @@ import argparse
 from nani.fetcher import Fetcher
 import textwrap
 
+#nani entry point
 def run():
 	parser = argparse.ArgumentParser(prog='nani',
 					description='A Software Development Question & Answer Aggregator.')
@@ -14,7 +15,7 @@ def run():
 	args = parser.parse_args()
 	
 	exit = False
-	fetch = Fetcher(args.unsupported)
+	fetch = Fetcher(args.unsupported) #create the fetcher object.
 	fetch.fetch_search(args.search, args.results)
 	focus = None
 
@@ -37,11 +38,11 @@ Help:\n
 \tback - Go back to the Search List\n
 \t\tAliases: b, back\n'''
 
-	if fetch.max_results < 1:
+	if fetch.max_results < 1: #if there is no useable results exit out.
 		exit = True
 		print('No Results Found For: '+' '.join(args.search))
 
-	while not exit:
+	while not exit: #handle the commands that the user inputs.
 		print(fetch.format_output(focus))
 		in_string = input(">")
 		if focus != None:
