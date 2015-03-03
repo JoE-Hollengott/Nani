@@ -3,6 +3,7 @@ from nani.interfaces.en_wikipedia_interface import En_Wikipedia
 from nani.interfaces.stackoverflow_interface import Stackoverflow
 from nani.interfaces.cplusplus_interface import Cplusplus
 from nani.interfaces.tutorialspoint_interface import Tutorialspoint
+from nani.interfaces.docs_oracle_interface import Docs_Oracle
 
 
 # Add all the classes here. like as above.
