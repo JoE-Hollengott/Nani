@@ -15,6 +15,7 @@ Currently supports answers from:
 * Stackoverflow.com
 * Cplusplus.com (Forums & Tutorial Docs)
 * tutorialspoint.com
+* docs.oracle.com (Java Docs)
 
 Requirements
 ============
